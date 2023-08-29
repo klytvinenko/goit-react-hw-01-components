@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 import { SectionStatistic } from "./Statistics.styled";
 import { SectionTitle } from "./Statistics.styled";
 import { SectionList } from "./Statistics.styled";
@@ -9,10 +8,12 @@ import { StatisticLabel } from "./Statistics.styled";
 
 
 
-export const Statistics = ({data}) => {
+export const Statistics = ({data, title}) => {
     return (
         <SectionStatistic>
-            <SectionTitle>UPLOAD STATS</SectionTitle>
+            {title && <SectionTitle> {title}</SectionTitle>}
+
+
             <SectionList>
                 {data.map(statistic => (
                     <SectionItem key={statistic.id}>
