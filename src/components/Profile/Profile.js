@@ -6,27 +6,27 @@ import { StatisticList } from "./Profile.styled";
 import { SocInfornation } from "./Profile.styled";
 import { StatisticItem } from "./Profile.styled";
 
-export const Profile = ({items}) => {
+export const Profile = ({ username, tag, location, avatar, stats }) => {
     return (
         <Card>
             <div>
-                <img src={items.avatar} alt="User avatar" width="220" height="180"/>
-                <Information>{items.username}</Information>
-                <SocInfornation>@{items.tag}</SocInfornation>
-                <SocInfornation>{items.location}</SocInfornation>
+                <img src={avatar} alt="User avatar" width="220" height="180"/>
+                <Information>{username}</Information>
+                <SocInfornation>@{tag}</SocInfornation>
+                <SocInfornation>{location}</SocInfornation>
             </div>
             <StatisticList>
                 <StatisticItem>
                     <span>Followers</span>
-                    <span> {items.stats.followers}</span>
+                    <span> {stats.followers}</span>
                 </StatisticItem>
                 <StatisticItem>
                     <span>Views</span>
-                    <span> {items.stats.views}</span>
+                    <span> {stats.views}</span>
                 </StatisticItem>
                 <StatisticItem>
                     <span>Likes</span>
-                    <span> {items.stats.likes}</span>
+                    <span> {stats.likes}</span>
                 </StatisticItem>
             </StatisticList>
         </Card>

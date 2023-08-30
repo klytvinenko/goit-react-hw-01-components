@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
-import { Container, Status } from "./FriendListItem.styled";
+import { ContainerLi, Status } from "./FriendListItem.styled";
 
 
-export const FriendListItem = ({friendItem :{isOnline, avatar, name}}) => {
+export const FriendListItem = ({friendItem :{isOnline, avatar, name, id}}) => {
     return (
-        <Container>
+        <ContainerLi key={id}>
              <Status status={isOnline}>{isOnline}</Status>
              <img src={avatar} alt="User avatar" width="48"/>
              <p>{name}</p>
-        </Container>
+        </ContainerLi>
     );
 };
 
 FriendListItem.propTypes = {
-    friend: PropTypes.shape({
+    friendItem: PropTypes.shape({
       name: PropTypes.string.isRequired,
       avatar: PropTypes.string.isRequired,
       isOnline: PropTypes.string.isRequired,

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const Container = styled.div`
+export const ContainerLi = styled.li`
   display: flex;
   align-items: center;
   gap: 15px;
